@@ -1,0 +1,463 @@
+/* Variables CSS */
+:root {
+  --amber-50: #fffbeb;
+  --amber-100: #fef3c7;
+  --amber-600: #d97706;
+  --amber-700: #b45309;
+  --amber-800: #92400e;
+  --red-50: #fef2f2;
+  --red-100: #fee2e2;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --red-700: #b91c1c;
+  --orange-50: #fff7ed;
+  --orange-100: #ffedd5;
+  --orange-500: #f97316;
+  --orange-600: #ea580c;
+  --orange-700: #c2410c;
+  --green-600: #16a34a;
+  --blue-100: #dbeafe;
+  --blue-600: #2563eb;
+  --purple-600: #9333ea;
+  --indigo-600: #4f46e5;
+  --pink-600: #db2777;
+  --gray-50: #f9fafb;
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, var(--orange-50), var(--red-50));
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--amber-800);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--amber-700);
+  margin-bottom: 4px;
+}
+
+.dates {
+  font-size: 0.875rem;
+  color: var(--amber-600);
+}
+
+/* Hoteles */
+.hotels-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .hotels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.hotel-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  border-left: 4px solid;
+}
+
+.hotel-card.granada {
+  border-left-color: var(--red-500);
+}
+
+.hotel-card.cordoba {
+  border-left-color: var(--orange-500);
+}
+
+.hotel-card h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--gray-800);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.hotel-card h3 i {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.hotel-card.granada h3 i {
+  color: var(--red-500);
+}
+
+.hotel-card.cordoba h3 i {
+  color: var(--orange-500);
+}
+
+.hotel-name {
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 8px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.star-filled {
+  width: 16px;
+  height: 16px;
+  color: #eab308;
+  fill: currentColor;
+}
+
+.hotel-location {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  margin-bottom: 8px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.feature {
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+
+.hotel-card.granada .feature {
+  background-color: var(--red-100);
+  color: var(--red-700);
+}
+
+.hotel-card.cordoba .feature {
+  background-color: var(--orange-100);
+  color: var(--orange-700);
+}
+
+.alternative {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  margin-top: 8px;
+}
+
+/* Navegación de días */
+.day-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.day-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.day-btn.active {
+  background-color: var(--amber-600);
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.day-btn:not(.active) {
+  background-color: white;
+  color: var(--amber-700);
+  border: 1px solid var(--amber-100);
+}
+
+.day-btn:not(.active):hover {
+  background-color: var(--amber-50);
+}
+
+.day-btn-date {
+  font-size: 0.75rem;
+  display: block;
+}
+
+.day-btn-title {
+  font-size: 0.875rem;
+  display: block;
+}
+
+/* Detalle del día */
+.day-detail {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.day-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+
+.day-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--gray-800);
+  margin: 0;
+}
+
+.day-info {
+  color: var(--amber-600);
+  margin: 0;
+}
+
+/* Actividades */
+.activities {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.activity:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.activity.highlight {
+  background-color: var(--amber-50);
+  border-left-color: var(--amber-600);
+}
+
+.activity:not(.highlight) {
+  background-color: var(--gray-50);
+  border-left-color: var(--gray-300);
+}
+
+.activity-checkbox {
+  margin-top: 4px;
+  margin-right: 12px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--amber-600);
+}
+
+.activity-content {
+  flex-grow: 1;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.activity-time {
+  font-weight: bold;
+  color: var(--amber-700);
+  margin-right: 12px;
+}
+
+.activity-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.activity-text {
+  color: var(--gray-700);
+}
+
+.activity.highlight .activity-text {
+  font-weight: bold;
+  color: var(--amber-800);
+}
+
+.activity-duration {
+  margin-left: auto;
+  font-size: 0.875rem;
+  color: var(--blue-600);
+  background-color: var(--blue-100);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.activity-highlight-note {
+  font-size: 0.75rem;
+  color: var(--amber-600);
+  margin-left: 24px;
+  margin-top: 4px;
+}
+
+/* Iconos de actividades */
+.icon-monument {
+  color: var(--amber-600);
+}
+.icon-dining {
+  color: var(--green-600);
+}
+.icon-transport {
+  color: var(--blue-600);
+}
+.icon-sightseeing {
+  color: var(--purple-600);
+}
+.icon-museum {
+  color: var(--red-600);
+}
+.icon-tasting {
+  color: var(--orange-600);
+}
+.icon-viewpoint {
+  color: var(--indigo-600);
+}
+.icon-garden {
+  color: var(--green-600);
+}
+.icon-wellness {
+  color: var(--pink-600);
+}
+.icon-show {
+  color: var(--purple-600);
+}
+.icon-shopping {
+  color: var(--gray-600);
+}
+.icon-hotel {
+  color: var(--blue-600);
+}
+.icon-default {
+  color: var(--gray-600);
+}
+
+/* Consejos */
+.tips {
+  margin-top: 32px;
+  background: linear-gradient(135deg, var(--amber-100), var(--orange-100));
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.tips h3 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: var(--amber-800);
+  margin-bottom: 16px;
+}
+
+.tips-grid {
+  display: grid;
+  gap: 16px;
+  font-size: 0.875rem;
+  color: var(--amber-700);
+}
+
+@media (min-width: 768px) {
+  .tips-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tip-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.tips ul {
+  margin-left: 16px;
+}
+
+.tips li {
+  margin-bottom: 4px;
+}
+
+/* Estados de checkbox */
+.activity.checked {
+  opacity: 0.7;
+}
+
+.activity.checked .activity-text {
+  text-decoration: line-through;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .day-title {
+    font-size: 1.5rem;
+  }
+
+  .activity-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .activity-duration {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
