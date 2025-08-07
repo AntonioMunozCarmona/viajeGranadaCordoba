@@ -1,0 +1,14 @@
+{
+  "name": "miprueba",
+  "version": "1.0.0",
+  "description": "HTML dedicado a un proyecto de viaje a Granada y Córdoba",
+  "main": "constantes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lucide": "^0.537.0"
+  }
+}

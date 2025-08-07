@@ -398,7 +398,7 @@ function renderDayDetail() {
 
   // Reinicializar los iconos de Lucide
   if (typeof lucide !== 'undefined') {
-    //lucide.createIcons()
+    lucide.createIcons()
   }
 }
 
@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Inicializar iconos de Lucide
   if (typeof lucide !== 'undefined') {
-    //lucide.createIcons()
+    lucide.createIcons()
   }
 })
 
